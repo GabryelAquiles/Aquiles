@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUILES</title>
+    <link rel="stylesheet" href="cores.css">
+</head>
+<body>
+    <header>
+        <div class="logo-aquiles">
+            <a href="index.html">
+                <img src="logo.aquiles" alt="logo.aquiles">
+            </a>
+        </div>
+        <h1>HOME</h1>
+    </header>
+    <main>
+        <h1>Welcome to Aquiles</h1>
+    </main>
+</body>
+</html>

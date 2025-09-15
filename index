@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="logo-aquiles">
-            <a href="index.html">
+            <a href="index">
                 <img src="logo.aquiles" alt="logo.aquiles">
             </a>
         </div>

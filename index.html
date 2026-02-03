@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquiles Softwares | Excelência Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo-box">
+                <img src="logo.png" alt="Aquiles Softwares" class="logo-img">
+                <span class="brand-name">Aquiles Softwares</span>
+            </div>
+            <a href="#contato" class="btn-contato-nav">Orçamento</a>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container">
+            <h1>O <span class="dim">começo</span> da sua presença digital.</h1>
+            <p>Sistemas e sites de alta performance para quem não aceita o comum.</p>
+        </div>
+    </header>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Nossas Soluções</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Landing Pages</h3>
+                    <p>Páginas focadas em conversão direta para vender seus produtos ou serviços específicos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Sites Institucionais</h3>
+                    <p>Sua empresa com um endereço digital profissional, rápido e seguro.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💎</div>
+                    <h3>Vitrine Digital</h3>
+                    <p>Exiba seus produtos de forma elegante e organizada para seus clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section >
+
+    <section id="planos" class="pricing">
+        <div class="container">
+            <h2 class="section-title">PLANOS</h2>
+            
+            <div class="plan-switch-wrapper">
+                <span class="save-tag">ECONOMIZE R$ 80 NO ANUAL</span>
+                <div class="toggle-container">
+                    <div id="selector-bg" class="selector-bg"></div>
+                    <button id="btn-mensal" class="toggle-btn active" onclick="setPlan('mensal')">MENSAL</button>
+                    <button id="btn-anual" class="toggle-btn" onclick="setPlan('anual')">ANUAL</button>
+                </div>
+            </div>
+
+            <div class="pricing-card-container">
+                <div class="card-plan">
+                    <div class="card-header">
+                        <span id="plan-label" class="plan-label">Hospedagem & Infraestrutura</span>
+                        <h3 id="plan-title">PLANO MENSAL</h3>
+                    </div>
+                    
+                    <div id="price-content" class="price-box">
+                        <div class="price-main">R$ 39,90<span>/mês</span></div>
+                    </div>
+
+                    <ul class="features-list" id="features-list">
+                        <li>✓ Hospedagem Premium</li>
+                        <li>✓ Segurança SSL Inclusa</li>
+                        <li>✓ Suporte via WhatsApp</li>
+                        <li>✓ Sem fidelidade</li>
+                    
+                    </ul>
+
+                    <button onclick="sendWhatsAppPlan()" class="btn-action">ASSINAR AGORA</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact-area">
+        <div class="container">
+            <form action="https://formspree.io/f/xdagllov" method="POST" class="contact-form">
+
+              
+                <h3>Vamos iniciar seu projeto?</h3>
+                <input type="text" name="name" placeholder="Seu Nome" required>
+                <select name="servico">
+                    <option value="landing">Landing Page</option>
+                    <option value="institucional">Site Institucional</option>
+                    <option value="vitrine">Vitrine Digital</option>
+                </select>
+                <textarea name="msg" placeholder="Conte sua ideia..." rows="3"></textarea>
+                <button type="submit" class="btn-submit">Enviar Proposta</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer-premium">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <h3 class="footer-logo">AQUILES<span>SOFTWARES</span></h3>
+            <p>Transformando negócios locais em potências digitais com tecnologia de elite e design de alta performance.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h4>Navegação</h4>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#showroom">Modelos</a></li>
+                <li><a href="#planos">Planos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-info">
+            <h4>Suporte e Vendas</h4>
+            <p><i class="fas fa-envelope"></i>aquilessoftwares@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Brasilia, Brasil</p>
+            <div class="badge-security">
+                <span class="badge"><i class="fas fa-shield-alt"></i> Site 100% Seguro</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 Aquiles Softwares - Todos os direitos reservados.</p>
+
+<style>
+    .whatsapp-flutuante {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+    }
+
+    .whatsapp-flutuante:hover {
+        transform: scale(1.1);
+        background-color: #20ba5a;
+    }
+
+    /* Ícone simples (usando um caractere ou SVG) */
+    .whatsapp-flutuante i {
+        margin-top: 2px;
+    }
+
+    @media (max-width: 768px) {
+        .whatsapp-flutuante {
+            width: 50px;
+            height: 50px;
+            bottom: 20px;
+            right: 20px;
+        }
+    }
+</style>
+
+<a href="https://wa.me/5561994415759" class="whatsapp-flutuante" target="_blank">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.886.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+    </svg>
+</a>
+
+<div id="cookie-banner" class="cookie-container">
+    <p>Usamos cookies para melhorar sua experiência.</p>
+    <button id="aceitar-cookie">Aceitar</button>
+</div>
+
+</footer>
+
+
+    <script src="script.js"></script>
+
+</div>
+
+</body>
+  
+</html>

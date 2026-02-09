@@ -5,264 +5,122 @@
     --text-light: #94a3b8;
     --accent: #2563eb;
     --btn-gray: #5d7088;
+    --cor-destaque: #ffffff; /* Ajustado para o branco da sua logo */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-body { background: var(--bg); color: #fff; line-height: 1.6; }
+body { background: var(--bg); color: #fff; line-height: 1.6; overflow-x: hidden; }
+html { scroll-behavior: smooth; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-/* Nav */
-nav { padding: 20px 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid #222; position: fixed; width: 100%; top: 0; z-index: 1000; }
-.nav-content { display: flex; justify-content: space-between; align-items: center; }
-.logo-box { display: flex; align-items: center; gap: 10px; }
-.logo-img { height: 35px; border-radius: 50%; }
-.brand-name { font-weight: 800; letter-spacing: 1px; font-size: 1rem; }
-.btn-contato-nav { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; border: 1px solid #444; padding: 8px 16px; border-radius: 6px; }
+/* --- NAV (MELHORADO) --- */
+nav { 
+    padding: 15px 0; 
+    background: rgba(0,0,0,0.85); 
+    backdrop-filter: blur(12px); 
+    border-bottom: 1px solid #222; 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+}
 
-/* Hero */
-.hero { padding: 160px 0 80px; text-align: center; }
-h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; }
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+
+.logo-box { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; /* Mais espaço entre logo e texto */
+}
+
+.logo-img { 
+    height: 55px; /* Aumentado de 35px para 55px */
+    width: auto;
+    border-radius: 50%; 
+    transition: transform 0.3s ease;
+}
+
+.logo-box:hover .logo-img { transform: scale(1.1); }
+
+.brand-name { 
+    font-weight: 900; /* Mais peso para autoridade */
+    letter-spacing: -0.5px; 
+    font-size: 1.4rem; /* Texto maior */
+}
+
+.btn-contato-nav { 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 0.85rem; 
+    font-weight: 700; 
+    border: 1px solid #444; 
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    transition: 0.3s;
+}
+
+.btn-contato-nav:hover { background: #fff; color: #000; }
+
+/* --- HERO --- */
+.hero { padding: 180px 0 100px; text-align: center; }
+h1 { 
+    font-size: 4rem; 
+    font-weight: 800; 
+    letter-spacing: -3px; /* Estilo agência tech moderna */
+    line-height: 1.1;
+}
 .dim { color: var(--text-light); }
 
-/* Serviços */
-.services { padding: 60px 0; }
-.section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; font-weight: 800; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.service-card { background: #0a0a0a; padding: 30px; border-radius: 12px; border: 1px solid #1a1a1a; transition: 0.3s; }
-.service-card:hover { border-color: #333; transform: translateY(-5px); }
-.service-icon { font-size: 2rem; margin-bottom: 15px; }
-.service-card h3 { margin-bottom: 10px; font-size: 1.25rem; }
-.service-card p { color: var(--text-light); font-size: 0.95rem; }
+/* --- SERVIÇOS & CARDS (GLASSMORPHISM) --- */
+.services { padding: 80px 0; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
 
-/* Plan Toggle (Animação de Arrastar) */
-.plan-switch-wrapper { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
-.save-tag { font-size: 0.7rem; font-weight: 800; color: #4ade80; margin-bottom: 15px; }
+.service-card { 
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(10px); 
+    padding: 40px; 
+    border-radius: 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.service-card:hover { 
+    background: rgba(255, 255, 255, 0.07); 
+    border-color: var(--cor-destaque); 
+    transform: translateY(-12px); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
+}
+
+/* --- PLANOS & TOGGLE --- */
 .toggle-container { background: #111; border: 1px solid #333; width: 260px; height: 50px; border-radius: 50px; display: flex; position: relative; padding: 4px; }
 .toggle-btn { flex: 1; background: none; border: none; color: #666; font-weight: 700; cursor: pointer; z-index: 2; transition: 0.3s; }
 .toggle-btn.active { color: #000; }
 .selector-bg { position: absolute; top: 4px; left: 4px; width: 126px; height: 40px; background: #fff; border-radius: 50px; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1; }
 
-/* Card de Preço (UX Melhorada) */
 .pricing-card-container { display: flex; justify-content: center; padding-bottom: 60px; }
-.card-plan { background: var(--card-white); color: var(--text-dark); padding: 45px; border-radius: 20px; width: 100%; max-width: 420px; text-align: center; box-shadow: 0 25px 50px -12px rgba(255,255,255,0.1); }
-.plan-label { display: inline-block; background: #f1f5f9; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; margin-bottom: 15px; }
-.price-main { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; }
-.price-main span { font-size: 1.2rem; color: #64748b; }
-.price-annual-info { font-size: 0.9rem; color: #64748b; font-weight: 600; display: block; margin-top: 5px; }
+.card-plan { background: var(--card-white); color: var(--text-dark); padding: 45px; border-radius: 20px; width: 100%; max-width: 420px; text-align: center; }
 
-.features-list { list-style: none; text-align: left; margin: 35px 0; border-top: 1px solid #e2e8f0; padding-top: 25px; }
-.features-list li { margin-bottom: 12px; font-size: 0.95rem; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+/* --- FOOTER PREMIUM --- */
+.footer-premium { background-color: #050505; border-top: 1px solid #1a1a1a; padding: 60px 0 20px; color: #94a3b8; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 40px; }
 
-.btn-action { background: var(--btn-gray); color: #fff; border: none; padding: 18px; border-radius: 10px; width: 100%; font-weight: 700; cursor: pointer; font-size: 1rem; transition: 0.3s; }
-.btn-action:hover { opacity: 0.9; transform: translateY(-2px); }
-
-/* Form */
-.contact-area { padding: 80px 0; background: #050505; }
-.contact-form { max-width: 500px; margin: 0 auto; background: #000; padding: 35px; border-radius: 15px; border: 1px solid #222; }
-.contact-form h3 { margin-bottom: 20px; text-align: center; }
-.contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 14px; background: #111; border: 1px solid #333; color: #fff; border-radius: 8px; margin-bottom: 15px; outline: none; }
-.btn-submit { background: #fff; color: #000; width: 100%; padding: 16px; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; }
-
-footer { padding: 40px; text-align: center; color: #444; font-size: 0.8rem; }
-
-@media (max-width: 768px) { h1 { font-size: 2.5rem; } }
-
-.footer-premium {
-    background-color: #050505;
-    border-top: 1px solid #1a1a1a;
-    padding: 60px 0 20px;
-    color: #94a3b8;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-logo {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.footer-logo span { color: #f39c12; /* Ou a cor de destaque que você escolher */ }
-
-.footer-brand p { line-height: 1.6; font-size: 0.95rem; }
-
-.footer-links h4, .footer-info h4 {
-    color: #fff;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-}
-
-.footer-links ul { list-style: none; }
-.footer-links ul li { margin-bottom: 12px; }
-.footer-links ul li a { 
-    text-decoration: none; 
-    color: #94a3b8; 
-    transition: 0.3s;
-}
-
-.footer-links ul li a:hover { color: #fff; padding-left: 5px; }
-
-.badge-security { margin-top: 20px; }
-.badge {
-    background: #1a1a1a;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    border: 1px solid #333;
-}
-
-.footer-bottom {
-    border-top: 1px solid #1a1a1a;
-    padding-top: 20px;
-    text-align: center;
-    font-size: 0.8rem;
-}
-
-.cnpj { margin-top: 5px; opacity: 0.5; }
-
-/* Responsividade */
 @media (max-width: 768px) {
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
-}
-html {
-    scroll-behavior: smooth;
-}
-@media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr; /* Uma coluna só */
-        text-align: center;         /* Centraliza tudo */
-        gap: 30px;
-        padding: 0 20px;
-    }
-
-    .footer-brand {
-        order: -1; /* Mantém a logo no topo */
-    }
-
-    .social-links {
-        justify-content: center; /* Centraliza os ícones sociais */
-        margin-top: 15px;
-    }
-
-    .footer-links ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px; /* Transforma a lista vertical em botões horizontais */
-        padding: 0;
-    }
-
-    .footer-links ul li {
-        margin-bottom: 0;
-    }
-
-    .footer-info p {
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .badge-security {
-        display: inline-block; /* Evita que o selo ocupe a largura toda */
-        margin: 20px auto 0;
-    }
+    h1 { font-size: 2.8rem; letter-spacing: -1px; }
+    .logo-img { height: 45px; }
+    .brand-name { font-size: 1.1rem; }
 }
 
-/* Remove margens padrão do navegador e impede a rolagem */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%; /* Esconde as barras de rolagem */
-}
-#navbar { /* Ou a classe que você usa para o seu menu */
-    position: absolute; /* Ela fica presa ao topo do documento, não ao ecrã */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    /* Remova qualquer 'position: fixed' ou 'position: sticky' que exista */
-
-/* Efeito de Vidro (Glassmorphism) para os Cards */
-.card-plano {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 40px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.card-plano:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: var(--cor-destaque);
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-/* Tipografia com mais peso */
-h1 {
-    letter-spacing: -3px; /* Estilo bem moderno de agência tech */
-    line-height: 1.1;
-}
-
-
+/* --- COOKIES --- */
 .cookie-container {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 15px;
-    padding: 20px;
-    display: none;
-    gap: 20px;
-    align-items: center;
-    z-index: 9999;
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: rgba(0,0,0,0.8); backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 15px;
+    padding: 20px; display: none; gap: 20px; align-items: center; z-index: 9999;
 }
 
-#aceitar-cookie {
-    background: #2563eb;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-}
+#aceitar-cookie { background: var(--accent); border: none; color: #fff; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
 
-/* Ajuste para celular */
-@media (max-width: 600px) {
-    .cookie-container {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-
-  /* Remove o contorno padrão apenas quando NÃO for necessário */
-button:focus {
-    outline: none;
-}
-
-/* Adiciona um estilo personalizado apenas para quem navega pelo teclado */
-/* Isso mantém a acessibilidade e limpa o visual para quem usa mouse */
-button:focus-visible {
-    outline: 2px solid #ff6600; /* Use a cor da sua marca */
-    outline-offset: 2px;
-}
-
-
-
-
-}
+/* --- ACESSIBILIDADE --- */
+button:focus { outline: none; }
+button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }

@@ -5,10 +5,10 @@
     --text-light: #94a3b8;
     --accent: #2563eb;
     --btn-gray: #5d7088;
-    --cor-destaque: #ffffff;
 }
 
-/* --- RESET & BASE --- */
+/* ================= GLOBAL ================= */
+
 * { 
     margin: 0; 
     padding: 0; 
@@ -16,15 +16,17 @@
     font-family: 'Inter', sans-serif; 
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
 body { 
     background: var(--bg); 
     color: #fff; 
     line-height: 1.6; 
-    overflow-x: hidden; 
-}
-
-html { 
-    scroll-behavior: smooth; 
 }
 
 .container { 
@@ -33,13 +35,18 @@ html {
     padding: 0 24px; 
 }
 
-/* --- NAVEGAÇÃO (LOGO AMPLIADA) --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================= NAV ================= */
+
 nav { 
-    padding: 15px 0; 
-    background: rgba(0,0,0,0.85); 
-    backdrop-filter: blur(12px); 
+    padding: 20px 0; 
+    background: rgba(0,0,0,0.8); 
+    backdrop-filter: blur(10px); 
     border-bottom: 1px solid #222; 
-    position: fixed; 
+    position: absolute; 
     width: 100%; 
     top: 0; 
     z-index: 1000; 
@@ -54,61 +61,53 @@ nav {
 .logo-box { 
     display: flex; 
     align-items: center; 
-    gap: 15px; 
+    gap: 10px; 
 }
 
+/* ===== LOGO MAIOR (CORREÇÃO) ===== */
 .logo-img { 
-    height: 55px; /* Tamanho grande para visibilidade */
-    width: auto; 
-    transition: transform 0.3s ease; 
-}
-
-.logo-box:hover .logo-img { 
-    transform: scale(1.1); 
+    height: 55px; /* AUMENTEI AQUI */
+    border-radius: 50%; 
 }
 
 .brand-name { 
-    font-weight: 900; 
-    letter-spacing: -0.5px; 
-    font-size: 1.4rem; 
+    font-weight: 800; 
+    letter-spacing: 1px; 
+    font-size: 1rem; 
 }
 
 .btn-contato-nav { 
     color: #fff; 
     text-decoration: none; 
-    font-size: 0.85rem; 
-    font-weight: 700; 
+    font-size: 0.8rem; 
+    font-weight: 600; 
     border: 1px solid #444; 
-    padding: 10px 20px; 
-    border-radius: 8px; 
-    transition: 0.3s; 
+    padding: 8px 16px; 
+    border-radius: 6px; 
 }
 
-.btn-contato-nav:hover { 
-    background: #fff; 
-    color: #000; 
-}
+/* ================= HERO ================= */
 
-/* --- HERO --- */
 .hero { 
-    padding: 180px 0 100px; 
+    padding: 160px 0 80px; 
     text-align: center; 
 }
 
 h1 { 
-    font-size: 4rem; 
+    font-size: 3.5rem; 
     font-weight: 800; 
-    letter-spacing: -3px; 
-    line-height: 1.1; 
+    letter-spacing: -3px;
+    line-height: 1.1;
 }
 
 .dim { 
     color: var(--text-light); 
 }
 
-/* --- SERVIÇOS (GLASSMORPHISM) --- */
+/* ================= SERVIÇOS ================= */
+
 .services { 
-    padding: 80px 0; 
+    padding: 60px 0; 
 }
 
 .section-title { 
@@ -121,31 +120,39 @@ h1 {
 .services-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 25px; 
+    gap: 20px; 
 }
 
 .service-card { 
-    background: rgba(255, 255, 255, 0.03); 
-    backdrop-filter: blur(10px); 
-    padding: 40px; 
-    border-radius: 15px; 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    background: #0a0a0a; 
+    padding: 30px; 
+    border-radius: 12px; 
+    border: 1px solid #1a1a1a; 
+    transition: 0.3s; 
 }
 
 .service-card:hover { 
-    transform: translateY(-12px); 
-    background: rgba(255, 255, 255, 0.07); 
-    border-color: #fff; 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border-color: #333; 
+    transform: translateY(-5px); 
 }
 
 .service-icon { 
-    font-size: 2.5rem; 
+    font-size: 2rem; 
     margin-bottom: 15px; 
 }
 
-/* --- PLANOS & SELECTOR --- */
+.service-card h3 { 
+    margin-bottom: 10px; 
+    font-size: 1.25rem; 
+}
+
+.service-card p { 
+    color: var(--text-light); 
+    font-size: 0.95rem; 
+}
+
+/* ================= PLAN TOGGLE ================= */
+
 .plan-switch-wrapper { 
     display: flex; 
     flex-direction: column; 
@@ -198,7 +205,8 @@ h1 {
     z-index: 1; 
 }
 
-/* --- CARDS DE PREÇO --- */
+/* ================= CARD DE PREÇO ================= */
+
 .pricing-card-container { 
     display: flex; 
     justify-content: center; 
@@ -213,7 +221,17 @@ h1 {
     width: 100%; 
     max-width: 420px; 
     text-align: center; 
-    box-shadow: 0 25px 50px -12px rgba(255,255,255,0.05);
+    box-shadow: 0 25px 50px -12px rgba(255,255,255,0.1); 
+}
+
+.plan-label { 
+    display: inline-block; 
+    background: #f1f5f9; 
+    padding: 4px 12px; 
+    border-radius: 20px; 
+    font-size: 0.7rem; 
+    font-weight: 800; 
+    margin-bottom: 15px; 
 }
 
 .price-main { 
@@ -222,12 +240,34 @@ h1 {
     letter-spacing: -2px; 
 }
 
+.price-main span { 
+    font-size: 1.2rem; 
+    color: #64748b; 
+}
+
+.price-annual-info { 
+    font-size: 0.9rem; 
+    color: #64748b; 
+    font-weight: 600; 
+    display: block; 
+    margin-top: 5px; 
+}
+
 .features-list { 
     list-style: none; 
     text-align: left; 
     margin: 35px 0; 
     border-top: 1px solid #e2e8f0; 
     padding-top: 25px; 
+}
+
+.features-list li { 
+    margin-bottom: 12px; 
+    font-size: 0.95rem; 
+    font-weight: 500; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
 }
 
 .btn-action { 
@@ -239,10 +279,17 @@ h1 {
     width: 100%; 
     font-weight: 700; 
     cursor: pointer; 
+    font-size: 1rem; 
     transition: 0.3s; 
 }
 
-/* --- FORMULÁRIO --- */
+.btn-action:hover { 
+    opacity: 0.9; 
+    transform: translateY(-2px); 
+}
+
+/* ================= FORM ================= */
+
 .contact-area { 
     padding: 80px 0; 
     background: #050505; 
@@ -257,7 +304,14 @@ h1 {
     border: 1px solid #222; 
 }
 
-.contact-form input, .contact-form select, .contact-form textarea { 
+.contact-form h3 { 
+    margin-bottom: 20px; 
+    text-align: center; 
+}
+
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea { 
     width: 100%; 
     padding: 14px; 
     background: #111; 
@@ -265,7 +319,7 @@ h1 {
     color: #fff; 
     border-radius: 8px; 
     margin-bottom: 15px; 
-    outline: none;
+    outline: none; 
 }
 
 .btn-submit { 
@@ -279,49 +333,173 @@ h1 {
     cursor: pointer; 
 }
 
-/* --- FOOTER PREMIUM --- */
-.footer-premium { 
-    background-color: #050505; 
-    border-top: 1px solid #1a1a1a; 
-    padding: 60px 0 20px; 
+/* ================= FOOTER ================= */
+
+.footer-premium {
+    background-color: #050505;
+    border-top: 1px solid #1a1a1a;
+    padding: 60px 0 20px;
+    color: #94a3b8;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.footer-logo span { 
+    color: #f39c12; 
+}
+
+.footer-links h4, .footer-info h4 {
+    color: #fff;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.footer-links ul { list-style: none; }
+
+.footer-links ul li { margin-bottom: 12px; }
+
+.footer-links ul li a { 
+    text-decoration: none; 
     color: #94a3b8; 
+    transition: 0.3s;
 }
 
-.footer-grid { 
-    display: grid; 
-    grid-template-columns: 2fr 1fr 1.5fr; 
-    gap: 40px; 
+.footer-links ul li a:hover { 
+    color: #fff; 
+    padding-left: 5px; 
 }
 
-.footer-logo { color: #fff; margin-bottom: 15px; }
+.badge-security { margin-top: 20px; }
 
-/* --- WHATSAPP & COOKIES --- */
-.whatsapp-flutuante {
-    position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
-    background-color: #25d366; color: #FFF; border-radius: 50px;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000;
+.badge {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    border: 1px solid #333;
 }
+
+.footer-bottom {
+    border-top: 1px solid #1a1a1a;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.cnpj { margin-top: 5px; opacity: 0.5; }
+
+/* ================= COOKIE (ARRUMADO) ================= */
 
 .cookie-container {
-    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-    background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.1); border-radius: 15px;
-    padding: 20px; display: none; gap: 20px; align-items: center; z-index: 9999;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    max-width: 420px;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 18px 20px;
+    display: none;
+    gap: 12px;
+    align-items: center;
+    z-index: 9999;
+    color: #e5e7eb;
+    font-size: 0.9rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-#aceitar-cookie { 
-    background: #fff; color: #000; border: none; padding: 10px 20px; 
-    border-radius: 8px; cursor: pointer; font-weight: 800; 
+#aceitar-cookie {
+    background: #2563eb;
+    border: none;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
 }
 
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-    h1 { font-size: 2.5rem; letter-spacing: -1px; }
-    .logo-img { height: 45px; }
-    .footer-grid { grid-template-columns: 1fr; text-align: center; }
-    .whatsapp-flutuante { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+#aceitar-cookie:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
-button:focus { outline: none; }
-button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 768px) { 
+    h1 { font-size: 2.5rem; }
+
+    .footer-grid { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .badge-security {
+        display: inline-block;
+        margin: 20px auto 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .cookie-container {
+        left: 10px;
+        right: 10px;
+        max-width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ================= ACESSIBILIDADE BOTÕES ================= */
+
+button:focus {
+    outline: none;
+}
+
+button:focus-visible {
+    outline: 2px solid #ff6600;
+    outline-offset: 2px;
+}
+
+/* ================= GLASS CARD ================= */
+
+.card-plano {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-plano:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--accent);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}

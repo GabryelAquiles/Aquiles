@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos | Aquiles Softwares</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para a Galeria de Modelos */
+        .showroom {
+            padding: 140px 0 80px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .model-card {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .model-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+        }
+
+        .model-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .model-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .model-card:hover .model-image img {
+            scale: 1.1;
+        }
+
+        .model-info {
+            padding: 25px;
+        }
+
+        .model-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .model-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .btn-preview {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .btn-preview:hover {
+            opacity: 0.9;
+        }
+
+        .back-home {
+            margin-bottom: 20px;
+            display: inline-block;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back-home:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo-box">
+                <img src="logo.png" alt="Aquiles Softwares" class="logo-img">
+                <span class="brand-name">Aquiles Softwares</span>
+            </div>
+            <a href="index.html#contato" class="btn-contato-nav">Orçamento</a>
+        </div>
+    </nav>
+
+    <section class="showroom">
+        <div class="container">
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Voltar para o início</a>
+            <h1 class="section-title" style="text-align: left;">Nossos <span class="dim">Modelos</span></h1>
+            <p style="color: var(--text-light); max-width: 600px;">Explore nossa seleção de estruturas premium projetadas para converter visitantes em clientes fiéis.</p>
+
+            <div class="model-grid">
+                
+                <div class="model-card">
+                    <div class="model-image">
+                        <img src="modelo1.jpg" alt="Preview Landing Page">
+                    </div>
+                    <div class="model-info">
+                        <h3>Elite Landing Page</h3>
+                        <p>Focada em conversão para produtos de alto ticket e serviços especializados.</p>
+                        <a href="#" class="btn-preview">Ver Demonstração</a>
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <div class="model-image">
+                        <img src="modelo2.jpg" alt="Preview Institucional">
+                    </div>
+                    <div class="model-info">
+                        <h3>Corporate Minimalist</h3>
+                        <p>Design limpo e autoritário para empresas que buscam credibilidade instantânea.</p>
+                        <a href="#" class="btn-preview">Ver Demonstração</a>
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <div class="model-image">
+                        <img src="modelo3.jpg" alt="Preview Vitrine">
+                    </div>
+                    <div class="model-info">
+                        <h3>Luxury Showcase</h3>
+                        <p>Perfeito para vitrines digitais de produtos de luxo e catálogos elegantes.</p>
+                        <a href="#" class="btn-preview">Ver Demonstração</a>
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <div class="model-image">
+                        <img src="modelo4.jpg" alt="Preview Portfolio">
+                    </div>
+                    <div class="model-info">
+                        <h3>Creative Portfolio</h3>
+                        <p>Estrutura dinâmica para profissionais criativos e agências modernas.</p>
+                        <a href="#" class="btn-preview">Ver Demonstração</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aquiles Softwares - Todos os direitos reservados.</p>
+                <div class="social-links" style="justify-content: center;">
+                    <a href="https://www.instagram.com/aquilessw" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5561994415759" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
